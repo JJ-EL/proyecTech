@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Profesores</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper grey darken-4">
+            <img class="logo" src="https://talentotechvalledelcauca.co/assets/landing/img/header/logo-home.svg" alt="">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="InfoUsuarios.html">Usuarios</a></li>
+            <li><a href="InfoProfesores.html">Profesores</a></li>
+            <li><a href="admin.html"><i class=" material-icons">keyboard_return</i>Atras</a></li>
+          </ul>
+        </div>
+    </nav>
+    <br><br>
+    <div class="container">
+        <div class="row center">
+            <div class="col s9">
+                <div class="card medium">
+                    <form action="" id="formProfesor">
+                        <div class="col s12 center">
+                            <h5 >
+                                <p title="Recuerda usar el ID de usuarios para el respectivo profesor que se va a crear">Registro de Profesores</p>
+                            </h5>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="text" name="id_usuario" id="id_usuario">
+                            <label for="id_usuario">Usuario</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="text" name="nombre" id="nombre">
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="text" name="materia" id="materia">
+                            <label for="materia">Materia</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <select name="grados_id" id="grados_id">
+                                <option value="">Seleccione un grado</option>
+                            </select>
+                            <label for="grados_id">Grado</label>
+                        </div>
+                        <div class="col s12">
+                            <button type="submit" class="waves-effect waves-light btn">
+                                Registrar
+                            </button>
+                        </div>
+                        <br>
+                        <div class="divider"></div>
+                        <br>
+                        <div id="errorMensaje"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="col s3 center">
+                <h6>Tabla Usuarios</h6>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID usuario</th>
+                            <th>Usuario</th>
+                        </tr>
+                    </thead>
+                    <tbody id="InfoUsu"></tbody>
+                </table>
+            </div>
+            <div class="col s12">
+                <h4>Profesores</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Profesor</th>
+                            <th>Usuario</th>
+                            <th>Nombre</th>
+                            <th>Matria</th>
+                            <th>Grado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="InfoProfesor"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar profesor -->
+    <div id="modalUpdate" class="modal">
+        <div class="modal-content">
+            <div class="row center">
+                <h5>Actualizar Profesor</h5>
+            <form id="formUpdateProfesor">
+            <div class="input-field col s6">
+                <input id="nombreUpdate" type="text" required />
+                <label for="nombreUpdate">Nombre</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="materiaUpdate" type="text" required />
+                <label for="materiaUpdate">Materia</label>
+            </div>
+            <div class="input-field col s6">
+                <select id="gradosUpdate" name="grados_id" class="browser-default">
+                    <option value="" disabled selected>Seleccione un grado</option>
+                </select>
+                <label for="gradosUpdate">Grado</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="idUsuarioUpdate" type="number" required />
+                <label for="idUsuarioUpdate">ID Usuario</label>
+            </div>
+                <input type="hidden" id="idProfesorUpdate" />
+                <button class="btn waves-effect waves-light" type="submit" id="btnActualizar">Guardar Cambios</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/InfoProfe.js"></script>
+</body>
+</html>
